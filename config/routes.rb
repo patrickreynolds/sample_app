@@ -6,6 +6,9 @@ SampleApp::Application.routes.draw do
   # User pages
   resources :users
 
+  # Microposts
+  resources :microposts, only: [:create, :destroy]
+
   # Static Pages
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'

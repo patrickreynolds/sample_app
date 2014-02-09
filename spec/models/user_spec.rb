@@ -20,6 +20,9 @@ describe User do
   it { should be_valid }
   it { should respond_to(:authenticate) }
 
+  it { should respond_to(:admin) }
+  it { should respond_to(:microposts) }
+
 
   # Checking presence of name
   describe "when name is not present" do

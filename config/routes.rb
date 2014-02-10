@@ -4,8 +4,15 @@ SampleApp::Application.routes.draw do
   root  'static_pages#home'
 
   # User pages
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
+  # Relationships
+  resources :relationships, only: [:create, :destroy]
+  
   # Microposts
   resources :microposts, only: [:create, :destroy]
 
